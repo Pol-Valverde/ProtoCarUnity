@@ -10,7 +10,7 @@ public class CarLogic : MonoBehaviour
     [SerializeField] float steeringPower = 5f;
     [SerializeField] Vector2 startPos = new Vector2(1,3.6f);
     [SerializeField] GameObject anim;
-    bool justCollided;
+    public bool justCollided;
     float steeringAmount, speed, direction, tempSteer;
     Quaternion startRot;
     //Animator animator;
@@ -29,8 +29,7 @@ public class CarLogic : MonoBehaviour
         steeringAmount = -Input.GetAxis("Horizontal");
         if(steeringAmount >= 1f)
         {
-           
-            speed = accelerationPower -2.7f;
+
             steeringPower += 0.3f * Time.deltaTime;
         }
         else
