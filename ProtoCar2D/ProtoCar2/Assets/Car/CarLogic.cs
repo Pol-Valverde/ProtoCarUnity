@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class CarLogic : MonoBehaviour
 {
     Rigidbody2D rb;
-
+    CinemachineImpulseSource impulse;
     [SerializeField] float accelerationPower = 5f;
     [SerializeField] float steeringPower = 5f;
     [SerializeField] Vector2 startPos = new Vector2(1,3.6f);
@@ -29,7 +29,7 @@ public class CarLogic : MonoBehaviour
         steeringAmount = -Input.GetAxis("Horizontal");
         if(steeringAmount >= 1f)
         {
-
+           
             steeringPower += 0.3f * Time.deltaTime;
         }
         else
