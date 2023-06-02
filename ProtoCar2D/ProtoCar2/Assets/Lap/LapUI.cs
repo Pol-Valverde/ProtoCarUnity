@@ -8,6 +8,8 @@ public class LapUI : MonoBehaviour
     [SerializeField] GameObject LapController;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] GameObject Car;
+    [SerializeField] GameObject Lap1;
+    [SerializeField] GameObject Lap2;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,12 @@ public class LapUI : MonoBehaviour
             LapController.GetComponent<LapCounter>().lapChanged = false;
             Debug.Log("HELLOOOO");
             
+        }
+        if(CounterLap >= 4)
+        {
+            CounterLap = 1;
+            Lap2.SetActive(true);
+            Lap1.SetActive(false);
         }
     }
 }
